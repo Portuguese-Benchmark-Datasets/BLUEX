@@ -66,7 +66,8 @@ class BluexLoader():
             "physics",
             "chemistry",
             "geography",
-            "biology"
+            "biology",
+            "philosophy"
         ]
         if subjects:
             for subject in subjects:
@@ -74,7 +75,7 @@ class BluexLoader():
                     logging.warning(f" {subject} is not a valid subject. Available subjects are: {available_subjects}")
         if year and year not in range(2018, 2024):
             logging.warning(f" {year} is not a valid year. Available years are: {range(2018, 2024)}")
-        if university and university not in ["unicamp", "usp"]:
+        if university and university.lower() not in ["unicamp", "usp"]:
             logging.warning(f" {university} is not a valid university. Available universities are: ['unicamp', 'usp']")
 
     def filtered_by(
