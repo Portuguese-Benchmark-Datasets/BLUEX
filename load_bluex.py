@@ -83,7 +83,7 @@ class BluexLoader():
         has_associated_images: bool = None,
         alternatives_type: str = None,
         subject: List[str] = None,
-        DS: bool = None,
+        PRK: bool = None,
         TU: bool = None,
         IU: bool = None,
         MR: bool = None,
@@ -99,7 +99,7 @@ class BluexLoader():
             has_associated_images (bool): If the question has associated images
             alternatives_type (str): The type of the alternatives
             subject (List[str]): The subjects of the questions
-            DS (bool): If the question is domain specific
+            PRK (bool): If the question requires prior knowledge
             TU (bool): If the question requires text understanding
             IU (bool): If the question requires image understanding
             MR (bool): If the question requires mathematical reasoning
