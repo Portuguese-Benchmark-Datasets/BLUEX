@@ -47,11 +47,9 @@ filtered_dataset = loader.filtered_by(params)
 
 # Gets the dataset generator
 generator = loader.get_bluex_generator(dataset)
+
+# Gets the dataset distribution
+# years = [2018, 2023]
+# university = ["unicamp", "usp"]
+info = loader.get_info(year, university)
 ```
-
-## Authors
-
-* **Thiago Soares Laitz**
-* **Thales Sales Almeida**
-* **Giovana K. Bonás**
-* **Rodrigo Nogueira**

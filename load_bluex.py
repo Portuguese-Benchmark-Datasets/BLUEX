@@ -6,7 +6,7 @@ from datasets import load_dataset
 
 class BluexLoader():
     def __init__(self):
-        self.dataset = load_dataset("portuguese-benchmark-datasets/BLUEX", "questions")
+        self.dataset = load_dataset("", "questions")
 
     def get_all_questions(self):
         return self.dataset["questions"]["content"]
@@ -37,7 +37,7 @@ class BluexLoader():
         # Checks if the arguments are valid
         self.check_filter_args(None, year, university)
         # Features to count
-        features_to_count = ["has_associated_images", "DS", "TU", "IU", "MR", "ML", "BK"]
+        features_to_count = ["has_associated_images", "PRK", "TU", "IU", "MR", "ML", "BK"]
         filtered_dataset = self.filtered_by(year=year, university=university)
 
         infos["subjects"] = dict(Counter(subject for example in filtered_dataset for subject in example["content"]["subject"]))
