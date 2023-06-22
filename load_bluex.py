@@ -6,7 +6,7 @@ from datasets import load_dataset
 
 class BluexLoader():
     def __init__(self):
-        self.dataset = load_dataset("", "questions")
+        self.dataset = load_dataset("portuguese-benchmark-datasets/BLUEX", "questions")
 
     def get_all_questions(self):
         return self.dataset["questions"]["content"]

@@ -17,7 +17,7 @@ The dataset was generated through manual annotation of exam questions using the 
     "has_associated_images": bool,
     "alternatives_type": str,
     "subject": List[str],
-    "DS": bool,
+    "PRK": bool,
     "TU": bool,
     "IU": bool,
     "MR": bool,
@@ -27,11 +27,15 @@ The dataset was generated through manual annotation of exam questions using the 
 ```
 Additionally, we modified the text of the questions to include a tag indicating the placement of images, such as [IMAGE 0], which corresponds to the first image in the associated_images list.
 
-### Description of the data
+### Downloading the dataset
 
-Initially, the dataset could be downloaded automatically by following the steps below. However, due to the anonymous nature of the repository at that time, we provided a zip file containing the dataset for access. Once the paper is accepted, we will make the dataset available again for download.
+The dataset can be downloaded automatically by following the steps below. We also provide a zip file containing the dataset.
 
 ### How to use
+
+```bash
+pip install -r requirements.txt
+```
 
 ```Python
 # Loads the dataset
@@ -53,3 +57,5 @@ generator = loader.get_bluex_generator(dataset)
 # university = ["unicamp", "usp"]
 info = loader.get_info(year, university)
 ```
+
+## How to cite
