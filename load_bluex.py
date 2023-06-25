@@ -37,7 +37,7 @@ class BluexLoader():
         # Checks if the arguments are valid
         self.check_filter_args(None, year, university)
         # Features to count
-        features_to_count = ["has_associated_images", "DS", "TU", "IU", "MR", "ML", "BK"]
+        features_to_count = ["has_associated_images", "PRK", "TU", "IU", "MR", "ML", "BK"]
         filtered_dataset = self.filtered_by(year=year, university=university)
 
         infos["subjects"] = dict(Counter(subject for example in filtered_dataset for subject in example["content"]["subject"]))
@@ -83,7 +83,7 @@ class BluexLoader():
         has_associated_images: bool = None,
         alternatives_type: str = None,
         subject: List[str] = None,
-        DS: bool = None,
+        PRK: bool = None,
         TU: bool = None,
         IU: bool = None,
         MR: bool = None,
@@ -99,7 +99,7 @@ class BluexLoader():
             has_associated_images (bool): If the question has associated images
             alternatives_type (str): The type of the alternatives
             subject (List[str]): The subjects of the questions
-            DS (bool): If the question is domain specific
+            PRK (bool): If the question requires prior knowledge
             TU (bool): If the question requires text understanding
             IU (bool): If the question requires image understanding
             MR (bool): If the question requires mathematical reasoning
