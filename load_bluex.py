@@ -9,7 +9,7 @@ class BluexLoader():
         self.dataset = load_dataset("portuguese-benchmark-datasets/BLUEX", "questions")
 
     def get_all_questions(self):
-        return self.dataset["questions"]["content"]
+        return self.dataset["questions"]
     
     def count_examples(self, feature: str, year: int = None, university: str = None) -> int:
         """
@@ -40,11 +40,11 @@ class BluexLoader():
         features_to_count = ["has_associated_images", "PRK", "TU", "IU", "MR", "ML", "BK"]
         filtered_dataset = self.filtered_by(year=year, university=university)
 
-        infos["subjects"] = dict(Counter(subject for example in filtered_dataset for subject in example["content"]["subject"]))
+        infos["subjects"] = dict(Counter(subject for example in filtered_dataset for subject in example["subject"]))
         infos["total_questions"] = len(filtered_dataset)
 
         # Questions with len(subject) > 1 are multidisciplinary
-        infos["multidisciplinary_questions"] = len([example for example in filtered_dataset if len(example["content"]["subject"]) > 1])
+        infos["multidisciplinary_questions"] = len([example for example in filtered_dataset if len(example["subject"]) > 1])
         for feature in features_to_count:
             infos[feature] = self.count_examples(feature, year, university)
         return dict(infos)
@@ -126,7 +126,7 @@ class BluexLoader():
         filtered_dataset = []
         for question in self.dataset["questions"]:
             # Gets the university, year and question number
-            question_university, question_year, _ = question["content"]["id"].split("_")
+            question_university, question_year, _ = question["id"].split("_")
             question_university = question_university.lower()
             question_year = int(question_year)
 
@@ -135,15 +135,15 @@ class BluexLoader():
                 continue
 
             # Checks if the question is multidisciplinary
-            if not include_multidisciplinary and len(question["content"]["subject"]) > 1:
+            if not include_multidisciplinary and len(question["subject"]) > 1:
                 continue
             
             # Checks if the question has the specified subjects
-            if subject and not any(s in question["content"]["subject"] for s in subject):
+            if subject and not any(s in question["subject"] for s in subject):
                 continue
 
             # Checks if the question has the specified features
-            if all(question["content"][feature] for feature in keys):
+            if all(question[feature] for feature in keys):
                 filtered_dataset.append(question)
                 
         return filtered_dataset
