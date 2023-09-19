@@ -59,3 +59,13 @@ info = loader.get_info(year, university)
 ```
 
 ## How to cite
+```bibtex
+@misc{almeida2023bluex,
+      title={BLUEX: A benchmark based on Brazilian Leading Universities Entrance eXams}, 
+      author={Thales Sales Almeida and Thiago Laitz and Giovana K. Bonás and Rodrigo Nogueira},
+      year={2023},
+      eprint={2307.05410},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
