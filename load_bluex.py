@@ -6,7 +6,7 @@ from datasets import load_dataset
 
 class BluexLoader():
     def __init__(self):
-        self.dataset = load_dataset("portuguese-benchmark-datasets/BLUEX", "questions")
+        self.dataset = load_dataset("portuguese-benchmark-datasets/BLUEX")
 
     def get_all_questions(self):
         return self.dataset["questions"]
@@ -73,7 +73,7 @@ class BluexLoader():
             for subject in subjects:
                 if subject not in available_subjects:
                     logging.warning(f" {subject} is not a valid subject. Available subjects are: {available_subjects}")
-        if year and year not in range(2018, 2024):
+        if year and year not in range(2018, 2025):
             logging.warning(f" {year} is not a valid year. Available years are: {range(2018, 2024)}")
         if university and university.lower() not in ["unicamp", "usp"]:
             logging.warning(f" {university} is not a valid university. Available universities are: ['unicamp', 'usp']")

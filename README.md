@@ -1,6 +1,6 @@
 # BLUEX
 
-Despite Portuguese being the fifth most widely spoken language, there is a lack of freely available resources for evaluating language models in Portuguese. This repository contains a multimodal dataset consisting of the two leading university entrance exams conducted in Brazil: Convest (Unicamp) and Fuvest (USP), spanning from 2018 to 2023. The dataset comprises a total of 1095 questions, of which 638 do not have accompanying images.
+Despite Portuguese being the fifth most widely spoken language, there is a lack of freely available resources for evaluating language models in Portuguese. This repository contains a multimodal dataset consisting of the two leading university entrance exams conducted in Brazil: Convest (Unicamp) and Fuvest (USP), spanning from 2018 to 2024. The dataset comprises a total of 1260 questions, of which 724 do not have accompanying images. More informations about the dataset can be found in our paper [BLUEX: A benchmark based on Brazilian Leading Universities Entrance eXams](https://arxiv.org/abs/2307.05410).
 
 ## Collection methodology
 
